@@ -1,0 +1,280 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Calligraffitti&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
+
+/* #-------Configurations générale------------#*/
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 1rem;
+  font-family: "Noto Sans", sans-serif;
+  font-style: normal;
+}
+
+.box-shadow {
+  box-shadow: 0px 0px 6px 3px rgba(0, 0, 0, 0.49);
+  -webkit-box-shadow: 0px 0px 6px 3px rgba(0, 0, 0, 0.49);
+  -moz-box-shadow: 0px 0px 6px 3px rgba(0, 0, 0, 0.49);
+}
+
+/* structuration des éléments généraux */
+
+html {
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  scroll-padding-top: 10rem;
+}
+
+*::selection {
+  background-color: var(--grey-color);
+  color: var(--blue-color);
+}
+
+*::-webkit-scrollbar {
+  height: 0.2rem;
+  width: 0.3rem;
+}
+
+*::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: var(--grey-color);
+  border-radius: 1rem;
+}
+
+:root {
+  --bleuMenu: #01257d;
+  --green-color: #44bba4;
+  --grey-color: #393e41;
+  --red-color: #e94f37;
+  --blue-color: #3f88c5;
+  --brown-color: #f6f7eb;
+  --white-color: #fff;
+  --black-color: #000000;
+}
+
+h1 {
+  font-family: "Open Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+  font-variation-settings: "wdth" 100;
+  color: var(--blue-color);
+  font-size: 2rem;
+}
+
+em {
+  margin: 1rem 0;
+  color: var(--grey-color);
+  opacity: 0.7;
+}
+
+span {
+  color: var(--red-color);
+}
+
+/* Desing formulaire */
+
+body {
+  background-color: var(--grey-color);
+  padding: 10% 0;
+}
+
+a.croix {
+  text-decoration: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+  color: var(--red-color);
+}
+
+a.croix i {
+  font-size: 2rem;
+  width: 100%;
+  transition: all 0.5s ease-out;
+}
+
+a.croix i:hover {
+  transform: scale(1.1);
+}
+
+body form {
+  position: relative;
+  padding: 2rem;
+  margin: auto;
+  width: 45%;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--white-color);
+  border-radius: 0.2rem;
+}
+
+.form-group {
+  margin-bottom: 1rem;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 1rem;
+  width: 100%;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
+  font-variation-settings: "wdth" 100;
+  font-size: 1.2rem;
+  color: var(--grey-color);
+}
+
+.form-group input {
+  width: 100%;
+  height: 2.4rem;
+  padding: 0.5rem;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  border-radius: 0.2rem;
+  box-shadow: 0 0 1px 1px;
+}
+
+.form-group input:focus {
+  border: 0.1rem solid var(--green-color);
+  box-shadow: 0 0 0 0;
+}
+
+.form-group input[type="file"] {
+  padding: 0.2rem;
+}
+
+.form-group input[type="submit"] {
+  background-color: var(--green-color);
+  color: var(--grey-color);
+  border: none;
+  cursor: pointer;
+  border-radius: 1rem;
+  transition: all 0.5s ease-out;
+  width: 12rem;
+}
+
+.form-group input[type="submit"]:hover {
+  background-color: var(--grey-color);
+  color: var(--green-color);
+  margin: auto;
+}
+
+.form-group textarea {
+  width: 100%;
+  height: 5rem;
+  padding: 0.4rem 0.5rem;
+  border: none;
+  transition: all 0.5s ease-out;
+}
+
+.form-group textarea:focus {
+  outline: none;
+  border: 0.1rem solid var(--green-color);
+  box-shadow: none;
+}
+
+.priorite {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  text-align: right;
+  padding: 1rem;
+}
+
+.priorite input[type="radio"] {
+  width: 10px;
+  height: 10px;
+}
+
+.priorite label {
+  margin-left: 0.5rem;
+  width: 20px;
+}
+
+.error {
+  color: var(--red-color);
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  text-align: center;
+  font-size: small;
+  opacity: 0.9;
+}
+
+/* #------------Responsive design--------- */
+
+@media screen and (max-width: 640px) {
+  body form {
+    width: 90%;
+  }
+  .form-group {
+    width: 100%;
+  }
+  .form-group label {
+    font-size: 0.9rem;
+  }
+  .form-group input {
+    width: 100%;
+  }
+  .form-group input[type="submit"] {
+    width: 9rem;
+    padding: 0.2rem 0.2rem;
+  }
+  .priorite {
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 641px) and (max-width: 1024px) {
+  body form {
+    width: 60%;
+  }
+  .form-group {
+    width: 100%;
+  }
+  .form-group label {
+    font-size: 1rem;
+  }
+  .form-group input {
+    width: 100%;
+  }
+  .form-group input[type="submit"] {
+    width: 9rem;
+    padding: 0.2rem 0.2rem;
+  }
+  .priorite {
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 1025px) {
+  body form {
+    width: 45%;
+  }
+  .form-group {
+    width: 90%;
+  }
+  .form-group input {
+    width: 100%;
+  }
+  .form-group input[type="submit"] {
+    width: 12rem;
+    padding: 0.2rem 0.2rem;
+  }
+  .priorite {
+    width: 90%;
+  }
+}
